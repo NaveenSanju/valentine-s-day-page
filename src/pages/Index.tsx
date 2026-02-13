@@ -1,6 +1,10 @@
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 import FloatingHearts from "@/components/FloatingHearts";
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-background px-4">
       <FloatingHearts />
@@ -12,9 +16,7 @@ const Index = () => {
         </div>
 
         {/* Headline */}
-        <h1
-          className="animate-fade-in-up text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight"
-        >
+        <h1 className="animate-fade-in-up text-4xl md:text-6xl font-bold tracking-tight text-foreground leading-tight">
           Happy Valentine's Day
         </h1>
 
@@ -36,13 +38,15 @@ const Index = () => {
           <span className="h-px w-12 bg-primary/30" />
         </div>
 
-        {/* Sub-message */}
-        <p
-          className="animate-fade-in-up mt-6 text-base text-muted-foreground"
+        {/* CTA Button */}
+        <Button
+          size="lg"
+          className="animate-fade-in-up mt-10 text-lg px-10"
           style={{ animationDelay: "0.9s" }}
+          onClick={() => navigate("/questions")}
         >
-          With all my love, forever & always 💕
-        </p>
+          I have something to ask you 💌
+        </Button>
       </main>
     </div>
   );
